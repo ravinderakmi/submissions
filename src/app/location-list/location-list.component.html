@@ -1,12 +1,12 @@
 <div class="list-group p-3">
-    <a *ngFor="let var of [1,2,3]" href="#"
+    <a *ngFor="let location of locations" href="#"
         class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Workflow Location Disabled</h5>
+            <h6 class="mb-1">Workflow Requires Location</h6>
             <small></small>
         </div>
-        <p class="mb-1">From Delhi.</p>
-        <p class="mb-1">To Delhi.</p>
-        <small>Due Date: 16 Sept</small>
+        <p class="mb-1">From {{location?.from}}.</p>
+        <p class="mb-1">To {{location?.to}}.</p>
+        <small>Due Date: {{location?.dated}}</small>
     </a>
 </div>

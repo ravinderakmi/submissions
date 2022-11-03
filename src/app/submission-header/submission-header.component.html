@@ -29,8 +29,17 @@
     <div class="col-md">
         <div class="form-floating">
             <div class="input-group">
-                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker" />
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+                    #d="ngbDatepicker" />
+                <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
             </div>
+        </div>
+    </div>
+    <div class="col-md">
+        <div class="form-floating">
+            <input type="checkbox" data-toggle="switchbutton" checked data-onlabel="Map" data-offlabel="List"
+                data-onstyle="success" data-offstyle="danger">
+
         </div>
     </div>
     <div class="col-md">

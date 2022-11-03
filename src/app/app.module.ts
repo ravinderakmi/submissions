@@ -10,6 +10,7 @@ import { SubmissionComponent } from './submission/submission.component';
 import { LocationListComponent } from './location-list/location-list.component';
 import { SubmissionHeaderComponent } from './submission-header/submission-header.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    LeafletModule
+    LeafletModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

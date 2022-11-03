@@ -33,20 +33,36 @@ export class MapComponent implements OnInit {
     })
   };
 
-  marker = {
-    id: 'marker',
-    name: 'Marker',
-    enabled: true,
-    layer: marker([46.879966, -121.726909], {
-      icon: icon({
-        iconSize: [25, 41],
-        iconAnchor: [13, 41],
-        iconUrl: 'assets/leaflet/marker-icon.png',
-        iconRetinaUrl: 'assets/leaflet/marker-icon-2x.png',
-        shadowUrl: 'assets/leaflet/marker-shadow.png'
+  markers = [
+    {
+      id: 'marker',
+      name: 'Marker',
+      enabled: true,
+      layer: marker([28.7041, 77.1025], {
+        icon: icon({
+          iconSize: [25, 41],
+          iconAnchor: [13, 41],
+          iconUrl: 'assets/leaflet/marker-icon.png',
+          iconRetinaUrl: 'assets/leaflet/marker-icon-2x.png',
+          shadowUrl: 'assets/leaflet/marker-shadow.png'
+        })
       })
-    })
-  };
+    },
+    {
+      id: 'marker',
+      name: 'Marker',
+      enabled: true,
+      layer: marker([26.9124, 75.7873], {
+        icon: icon({
+          iconSize: [25, 41],
+          iconAnchor: [13, 41],
+          iconUrl: 'assets/leaflet/marker-icon.png',
+          iconRetinaUrl: 'assets/leaflet/marker-icon-2x.png',
+          shadowUrl: 'assets/leaflet/marker-shadow.png'
+        })
+      })
+    }
+  ];
 
   geoJSON = {
     id: 'geoJSON',
@@ -69,7 +85,7 @@ export class MapComponent implements OnInit {
   model = new LeafletLayersDemoModel(
     [this.LAYER_OSM, this.LAYER_OCM],
     this.LAYER_OCM.id,
-    [this.marker, this.geoJSON]
+    [...this.markers, this.geoJSON]
   );
 
   layers: Layer[] = [];
@@ -80,17 +96,17 @@ export class MapComponent implements OnInit {
       'Open Cycle Map': this.LAYER_OCM.layer
     },
     overlays: {
-      Marker: this.marker.layer,
+      // Marker: this.markers[0].layer,
       GeoJSON: this.geoJSON.layer
     }
   };
 
   options = {
-    zoom: 10,
-    center: latLng(46.879966, -121.726909)
+    zoom: 5,
+    center: latLng(28.7041, 77.1025)
   };
 
-  constructor() {}
+  constructor() { }
 
   init() {
     const baseLayer = this.model.baseLayers.find((l: any) => (l.id === this.model.baseLayer));
