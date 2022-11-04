@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-location-list',
@@ -9,18 +9,7 @@ export class LocationListComponent implements OnInit {
 
   constructor() { }
 
-  locations = [
-    {
-      from: "Delhi",
-      to: "Rewari",
-      dated: "16th September 2022"
-    },
-    {
-      from: "Jaipur",
-      to: "Raipur",
-      dated: "17th September 2022"
-    }
-  ]
+  @Input() locations: any[] = [];
 
   ngOnInit(): void {
   }

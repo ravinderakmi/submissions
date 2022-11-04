@@ -2,11 +2,11 @@
     <a *ngFor="let location of locations" href="#"
         class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
-            <h6 class="mb-1">Workflow Requires Location</h6>
-            <small></small>
+            <h6 class="mb-1">{{location?.title}}</h6>
+            <small>{{location?.status}}</small>
         </div>
         <p class="mb-1">From {{location?.from}}.</p>
         <p class="mb-1">To {{location?.to}}.</p>
-        <small>Due Date: {{location?.dated}}</small>
+        <small>Due Date: {{location?.dueDate}}</small>
     </a>
 </div>

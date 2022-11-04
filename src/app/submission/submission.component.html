@@ -1,13 +1,13 @@
 <div class="container-fluid">
     <div class="row">
-        <app-submission-header></app-submission-header>
+        <app-submission-header [locations]="locations"></app-submission-header>
     </div>
     <div class="row m-3">
-        <div class="col-sm-3">
-            <app-location-list></app-location-list>
+        <div class="col">
+            <app-location-list [locations]="filteredLocations"></app-location-list>
         </div>
-        <div class="col-sm-8">
-            <app-map></app-map>
+        <div class="col" *ngIf="showMap">
+            <app-map [locations]="filteredLocations"></app-map>
         </div>
     </div>
 
